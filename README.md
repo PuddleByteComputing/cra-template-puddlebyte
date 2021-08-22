@@ -1,20 +1,11 @@
-# cra-template-typescript
+# cra-template-puddlebyte
 
-This is the official TypeScript template for [Create React App](https://github.com/facebook/create-react-app).
+This is the PuddleByte template for [Create React App](https://github.com/facebook/create-react-app).
 
-To use this template, add `--template typescript` when creating a new app.
+To use this template, add `--template file:path/to/this-dir` when creating a new app.
 
 For example:
 
 ```sh
-npx create-react-app my-app --template typescript
-
-# or
-
-yarn create react-app my-app --template typescript
+yarn create create-react-app my-app --template file:../path/to/the-dir-containing-this-README
 ```
-
-For more information, please refer to:
-
-- [Getting Started](https://create-react-app.dev/docs/getting-started) – How to create a new app.
-- [User Guide](https://create-react-app.dev) – How to develop apps bootstrapped with Create React App.
