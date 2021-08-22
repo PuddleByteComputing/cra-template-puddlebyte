@@ -1,6 +1,6 @@
 {
   "name": "cra-template-puddlebyte",
-  "version": "1.0",
+  "version": "1.0.0",
   "keywords": [
     "react",
     "create-react-app",
@@ -10,7 +10,7 @@
   "description": "The PuddleByte template for Create React App.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/puddlebyte/cra-template-puddlebyte.git",
+    "url": "https://github.com/puddlebyte/cra-template-puddlebyte.git"
   },
   "license": "MIT",
   "engines": {
