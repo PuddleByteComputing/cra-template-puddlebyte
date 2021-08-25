@@ -3,7 +3,6 @@ import React from 'react'
 const squareSize = 9
 const spacing = 1
 const size = squareSize * 3 + spacing * 5
-const end = size - 1
 
 function points(x: number, y: number, tilt: number) {
   const pts = [
@@ -23,8 +22,14 @@ interface Props {
 
 function FauxLogo(props: Props) {
   return (
-    <svg viewBox={`0 0 ${end} ${end}`} {...props}>
-      <polygon fill="#fff" points={`0,0 ${end},0 ${end},${end} 0,${end}`} />
+    <svg
+      baseProfile="full"
+      version="1.1"
+      viewBox={`0 0 ${size} ${size}`}
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polygon fill="#fff" points={`0,0 ${size},0 ${size},${size} 0,${size}`} />
       {[
         [1, 1],
         [21, 1],
