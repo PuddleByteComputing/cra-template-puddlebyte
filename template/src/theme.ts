@@ -20,12 +20,28 @@ const theme = createTheme({
     success: lightGreen,
   },
     typography: {
-    h1: { fontSize: '1.8rem' },
-    h2: { fontSize: '1.6rem' },
-    h3: { fontSize: '1.4rem' },
-    h4: { fontSize: '1.3rem' },
-    h5: { fontSize: '1.2rem', fontWeight: 500 },
-    h6: { fontSize: '1.1rem' },
+    h1: {
+      fontSize: '2.4rem',
+      fontFamily: 'Cormorant Garamond, serif',
+      fontWeight: 700,
+    },
+    h2: {
+      fontSize: '1.8rem',
+      fontFamily: 'Cormorant Garamond, serif',
+      fontWeight: 700,
+      letterSpacing: '0.015em',
+    },
+    h3: {
+      fontSize: '1.6rem',
+      fontFamily: 'Cormorant Garamond, serif',
+      fontWeight: 700,
+      letterSpacing: '0.03em',
+    },
+    h4: { fontSize: '1.5rem', fontWeight: 300, letterSpacing: '0.03em' },
+    h5: { fontSize: '1.3rem', fontWeight: 300, letterSpacing: '0.06em' },
+    h6: { fontSize: '1.1rem', fontWeight: 300, letterSpacing: '0.12em' },
+    overline: { fontWeight: 500 },
+    caption: { fontStyle: 'italic' },
   },
 });
 
