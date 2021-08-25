@@ -22,5 +22,11 @@
   "files": [
     "template",
     "template.json"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "2.3.2"
+  },
+  "scripts": {
+    "pp": "yarn prettier --write ."
+  }
 }
