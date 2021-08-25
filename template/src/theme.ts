@@ -1,15 +1,15 @@
-import { createTheme } from '@material-ui/core/styles';
-import { amber, cyan, deepPurple } from '@material-ui/core/colors';
-import { lightGreen, pink, teal } from '@material-ui/core/colors';
+import { createTheme } from '@material-ui/core/styles'
+import { amber, cyan, deepPurple } from '@material-ui/core/colors'
+import { lightGreen, pink, teal } from '@material-ui/core/colors'
 
-const defaults = createTheme({});
-console.log(defaults);
+const defaults = createTheme({})
+console.log(defaults)
 
 const theme = createTheme({
   components: {
     MuiCssBaseline: {
-      styleOverrides: `code, kbd, listing, plaintext, pre, samp, tt, xmp {font-family: Roboto Mono, monospace;}`, 
-    }, 
+      styleOverrides: `code, kbd, listing, plaintext, pre, samp, tt, xmp {font-family: Roboto Mono, monospace;}`,
+    },
   },
   palette: {
     primary: teal,
@@ -19,7 +19,7 @@ const theme = createTheme({
     info: cyan,
     success: lightGreen,
   },
-    typography: {
+  typography: {
     h1: {
       fontSize: '2.4rem',
       fontFamily: 'Cormorant Garamond, serif',
@@ -43,6 +43,6 @@ const theme = createTheme({
     overline: { fontWeight: 500 },
     caption: { fontStyle: 'italic' },
   },
-});
+})
 
-export default theme;
+export default theme

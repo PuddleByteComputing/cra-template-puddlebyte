@@ -18,11 +18,7 @@
       "web-vitals": "^2.0.0"
     },
     "eslintConfig": {
-      "extends": [
-        "react-app",
-        "react-app/jest",
-        "prettier"
-      ]
+      "extends": ["react-app", "react-app/jest", "prettier"]
     }
   }
 }

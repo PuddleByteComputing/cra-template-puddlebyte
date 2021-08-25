@@ -1,6 +1,6 @@
-import React from "react";
-import { Box, Container } from "@material-ui/core";
- import { Typography as T } from "@material-ui/core";
+import React from 'react'
+import { Box, Container } from '@material-ui/core'
+import { Typography as T } from '@material-ui/core'
 import MuiSamples from './MuiSamples'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       </Box>
       <MuiSamples />
     </Container>
-  );
+  )
 }
 
-export default App;
+export default App
