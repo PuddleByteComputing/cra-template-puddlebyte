@@ -1,14 +1,43 @@
+import React from 'react'
+import {
+  Link as RouterLink,
+  LinkProps as RouterLinkProps,
+} from 'react-router-dom'
 import { createTheme } from '@material-ui/core/styles'
 import { amber, cyan, deepPurple } from '@material-ui/core/colors'
 import { lightGreen, pink, teal } from '@material-ui/core/colors'
 
-const defaults = createTheme({})
-console.log(defaults)
+// Delegate Material UI <Link /> to React Router <Link />
+// See: https://next.material-ui.com/guides/routing/#global-theme-link
+type LinkShimProps = Omit<RouterLinkProps, 'to'> & {
+  href: RouterLinkProps['to']
+}
+
+const LinkShim = React.forwardRef<HTMLAnchorElement, LinkShimProps>(
+  (props, ref) => {
+    const { href, ...other } = props
+
+    return (
+      <RouterLink data-testid="custom-link" ref={ref} to={href} {...other} />
+    )
+  }
+)
 
 const theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: `code, kbd, listing, plaintext, pre, samp, tt, xmp {font-family: Roboto Mono, monospace;}`,
+    },
+    MuiLink: {
+      defaultProps: {
+        // @ts-ignore
+        component: LinkShim,
+      },
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        LinkComponent: LinkShim,
+      },
     },
   },
   palette: {
