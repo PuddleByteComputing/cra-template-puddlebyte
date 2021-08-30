@@ -36,7 +36,7 @@ function FauxLogo(props: Props) {
         [21, 21],
         [1, 21],
       ].map(([x, y]) => (
-        <polygon fill="#000" points={points(x, y, 2)} />
+        <polygon key={`pt${x}-${y}`} fill="#000" points={points(x, y, 2)} />
       ))}
       {[
         [11, 1],
@@ -45,7 +45,7 @@ function FauxLogo(props: Props) {
         [21, 11],
         [11, 21],
       ].map(([x, y]) => (
-        <polygon fill="#000" points={points(x, y, 3)} />
+        <polygon key={`pt${x}-${y}`} fill="#000" points={points(x, y, 3)} />
       ))}
     </svg>
   )

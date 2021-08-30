@@ -14,10 +14,9 @@ function ThemeTypographySamples() {
   return (
     <Stack
       direction="column"
-      divider={<Divider />}
       alignItems="flex-start"
       justifyContent="flex-start"
-      spacing={0.5}
+      spacing={1}
     >
       {headers.map((variant, i) => (
         <T variant={variant} key={`t-${variant}`}>
@@ -29,16 +28,16 @@ function ThemeTypographySamples() {
         </T>
       ))}
       {subtitles.map((variant, i) => (
-        <T variant={variant}>
+        <T key={`t-${variant}`} variant={variant}>
           {variant}: {lorWords.slice(8 * i, 8 * (i + 1)).join(' ')}
         </T>
       ))}
       {bodies.map(variant => (
-        <T variant={variant}>
+        <T key={`t-${variant}`} variant={variant}>
           {variant}: {lorem}
         </T>
       ))}
-      <Box>
+      <Box border={1} borderColor="grey.300" width="100%" p={1}>
         <T variant="overline">overline: {lorWords.slice(0, 3).join(' ')}</T>
         <T variant="h1">
           {lorWords
@@ -49,11 +48,11 @@ function ThemeTypographySamples() {
             .join(' ')}
         </T>
       </Box>
-      <Button>button typography</Button>
-      <Box>
-        <Box sx={{ width: 400, height: 150, bgcolor: 'secondary.dark' }} />
+      <Box border={1} borderColor="grey.300" p={1}>
+        <Box width="100%" height={150} bgcolor="secondary.dark" />
         <T variant="caption">caption: {lorWords.slice(0, 8).join(' ')}</T>
       </Box>
+      <Button variant="outlined">Button</Button>
     </Stack>
   )
 }
@@ -70,7 +69,7 @@ function ThemeColorSamples() {
   return (
     <Stack direction="column" spacing={0.5}>
       {colors.map(color => (
-        <Button color={color} key={`button-${color}`}>
+        <Button color={color} key={`button-${color}`} variant="outlined">
           {color}
         </Button>
       ))}
@@ -87,25 +86,55 @@ function ThemeColorSamples() {
 
 function MuiSamples() {
   return (
-    <Stack alignItems="center" spacing={1}>
-      <T variant="h4">
-        MUI Theme Samples - <code>src/theme.ts</code>
-      </T>
-      <Stack alignItems="stretch" direction="row" spacing={2}>
-        <Stack divider={<Divider flexItem />} spacing={1.5}>
-          <T variant="h5" color="secondary">
-            Typography
-          </T>
+    <Box display="flex" flexDirection="column" height="100%">
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        mb="1em"
+        mt="0.5em"
+        flexDirection="column"
+        width="100%"
+      >
+        <T variant="h4">MUI Theme Samples</T>
+        <code>src/theme.ts</code>
+      </Box>
+      <Box
+        display="flex"
+        sx={{ flexDirection: { xs: 'column', sm: 'row' } }}
+        justifyContent="space-between"
+      >
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mb="1em"
+          >
+            <T variant="h5" color="secondary" mb="0.25em">
+              Typography
+            </T>
+            <Divider flexItem />
+          </Box>
           <ThemeTypographySamples />
-        </Stack>
-        <Stack divider={<Divider flexItem />} alignItems="center" spacing={2}>
-          <T variant="h5" color="secondary">
-            Color
-          </T>
+        </Box>
+        <Box>&nbsp;&nbsp;&nbsp;</Box>
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mb="1em"
+          >
+            <T variant="h5" color="secondary" mb="0.25em">
+              Color
+            </T>
+            <Divider flexItem />
+          </Box>
           <ThemeColorSamples />
-        </Stack>
-      </Stack>
-    </Stack>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 

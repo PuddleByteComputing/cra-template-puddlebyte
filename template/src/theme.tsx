@@ -7,6 +7,10 @@ import { createTheme } from '@material-ui/core/styles'
 import { amber, cyan, deepPurple } from '@material-ui/core/colors'
 import { lightGreen, pink, teal } from '@material-ui/core/colors'
 
+const defaultTheme = createTheme({})
+
+console.log(defaultTheme)
+
 // Delegate Material UI <Link /> to React Router <Link />
 // See: https://next.material-ui.com/guides/routing/#global-theme-link
 type LinkShimProps = Omit<RouterLinkProps, 'to'> & {
@@ -39,6 +43,11 @@ const theme = createTheme({
         LinkComponent: LinkShim,
       },
     },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: { caption: 'div' },
+      },
+    },
   },
   palette: {
     primary: teal,
@@ -50,25 +59,23 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: '2.4rem',
-      fontFamily: 'Cormorant Garamond, serif',
-      fontWeight: 700,
+      fontSize: '2rem',
+      fontFamily: 'Newsreader, serif',
+      fontWeight: 500,
     },
     h2: {
-      fontSize: '1.8rem',
-      fontFamily: 'Cormorant Garamond, serif',
-      fontWeight: 700,
-      letterSpacing: '0.015em',
+      fontSize: '1.6rem',
+      fontFamily: 'Newsreader, serif',
+      fontWeight: 400,
     },
     h3: {
-      fontSize: '1.6rem',
-      fontFamily: 'Cormorant Garamond, serif',
-      fontWeight: 700,
-      letterSpacing: '0.03em',
+      fontSize: '1.4rem',
+      fontFamily: 'Newsreader, serif',
+      fontWeight: 300,
     },
-    h4: { fontSize: '1.5rem', fontWeight: 300, letterSpacing: '0.03em' },
-    h5: { fontSize: '1.3rem', fontWeight: 300, letterSpacing: '0.06em' },
-    h6: { fontSize: '1.1rem', fontWeight: 300, letterSpacing: '0.12em' },
+    h4: { fontSize: '1.5rem', fontWeight: 500 },
+    h5: { fontSize: '1.3rem', fontWeight: 400 },
+    h6: { fontSize: '1.1rem', fontWeight: 300 },
     overline: { fontWeight: 500 },
     caption: { fontStyle: 'italic' },
   },
