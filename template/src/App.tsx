@@ -25,7 +25,7 @@ function App() {
               >
                 <T variant="h1">App</T>
                 <code>src/App.tsx</code>
-                <FauxLogo width="3em" height="3em" />
+                <FauxLogo width="4em" height="4em" />
               </Box>
             </Route>
           </Switch>
